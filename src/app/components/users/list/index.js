@@ -2,7 +2,8 @@ import { Component } from '@core';
 
 @Component({
     bindings : {},
-    template : `<h1>users list</h1>`
+    template : `<h1>users list</h1>`,
+    controllerAs : 'sup'
 })
 export default class {
 

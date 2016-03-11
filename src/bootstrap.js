@@ -1,4 +1,4 @@
-import { registerConfigs, registerRuns, registerLayouts, registerStates, registerProviders, registerComponents, registerResources, registerFactories, registerServices, registerFilters } from '@core';
+import { registerComponents, registerConfigs, registerRuns, registerLayouts, registerStates, registerProviders, registerResources, registerFactories, registerServices, registerFilters } from '@core';
 
 const error = (...args) => {
     if (SEED_CORE.DEVELOPMENT) {
@@ -29,10 +29,8 @@ const options = { application, prefix, info, warn, debug, error };
  * Register configuration stuff
  */
 registerConfigs(require.context('./configuration/configs', true, /.js/), options);
-registerRuns(require.context('./configuration/runs', true, /.js/), options);
 registerLayouts(require.context('./configuration/layouts', true, /.js/), options);
 registerStates(require.context('./configuration/states', true, /.js/), options);
-registerProviders(require.context('./configuration/providers', true, /.js/), options);
 
 /**
  * Register application stuff
@@ -42,6 +40,12 @@ registerResources(require.context('./app/resources', true, /.js/), options);
 registerFactories(require.context('./app/factories', true, /.js/), options);
 registerServices(require.context('./app/services', true, /.js/), options);
 registerFilters(require.context('./app/filters', true, /.js/), options);
+registerProviders(require.context('./app/providers', true, /.js/), options);
+
+/**
+ * Register run stuff
+ */
+registerRuns(require.context('./runs', true, /.js/), options);
 
 try {
     angular.bootstrap(document, [application.name]);
