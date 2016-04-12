@@ -1,3 +1,6 @@
+import { getPrototypeDecoratorValue, ENUMS } from './decorators.js';
+
+
 /**
  * Creates a registry that builds the name from folders
  * @param prettyTypeName - The pretty type name, only used for debugging purposes
@@ -22,4 +25,16 @@ export const createFolderNameRegistry = (prettyTypeName, pathTransformers = [], 
                 registration(application, transformedName, value);
             });
     };
+};
+
+/**
+ * Builds a component config object from the component
+ * @param component
+ * @returns {Object}
+ */
+export const buildComponentConfig = (component) => {
+    const config = getPrototypeDecoratorValue(component, ENUMS.COMPONENT);
+    config.controller = component;
+    config.controllerAs = 'vm';
+    return config;
 };

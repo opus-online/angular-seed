@@ -1,15 +1,19 @@
 import { Component } from '@core';
 
 @Component({
-    bindings : {},
+    bindings : {
+        'id' : '=',
+        'name' : '@'
+    },
     template : `
-        <h1>users detail</h1>
+        <h2>users id {{ vm.id }}</h2>
+        <h2>users name {{ vm.name }}</h2>
         <p>{{ 1457651361 | unixToDate | date }}</p>
     `
 })
 export default class  {
 
-    constructor ($http, Path) {
+    constructor (Path) {
         console.log('UsersDetailComponent', Path);
     }
 

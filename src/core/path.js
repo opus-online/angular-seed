@@ -3,6 +3,7 @@ export const resolveFileName = (path) => {
     const indexOfDot = path.lastIndexOf('.');
     return path.substring(indexOfSlash + 1, indexOfDot);
 };
+
 export const splitPathToFolders = (path) => {
     const pathWithFilename = path.substring(2).substring(-3);
     const index = pathWithFilename.lastIndexOf('/');

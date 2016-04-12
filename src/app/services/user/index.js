@@ -1,7 +1,7 @@
 export default class {
 
-    constructor () {
-        console.log('service initialized');
+    constructor (Path) {
+        console.log('service initialized with path', Path);
     }
 
 }

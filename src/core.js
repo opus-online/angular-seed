@@ -1,9 +1,10 @@
 import lodash from 'lodash';
 
-import { createPrototypeDecorator, getPrototypeDecoratorValue, ENUMS } from './core/decorators.js';
-import { createFolderNameRegistry } from './core/registry.js';
+import { createPrototypeDecorator, ENUMS } from './core/decorators.js';
+import { createFolderNameRegistry, buildComponentConfig } from './core/registry.js';
 import { buildNameFromPath, addNameSuffix } from './core/transformers.js';
 import { indexFileValidator, layoutConfigurationValidator, stateConfigurationValidator, componentConfigurationValidator } from './core/validators.js';
+import { buildMockComponent as testingMockComponent } from './core/testing.js';
 
 /**
  * Component decorator
@@ -15,12 +16,7 @@ export const registerComponents = createFolderNameRegistry(
     'Component',
     [buildNameFromPath, lodash.lowerFirst],
     [indexFileValidator, componentConfigurationValidator],
-    (application, name, component) => {
-        const config = getPrototypeDecoratorValue(component, ENUMS.COMPONENT);
-        config.controller = component;
-        config.controllerAs = 'vm';
-        application.component(name, config);
-    }
+    (application, name, component) => application.component(name, buildComponentConfig(component))
 );
 
 export const registerProviders = createFolderNameRegistry(
@@ -85,3 +81,9 @@ export const registerResources = createFolderNameRegistry(
     [indexFileValidator],
     (application, name, value) => application.service(name, value)
 );
+
+/**
+ *
+ * @type {Function}
+ */
+export const buildMockComponent = testingMockComponent;
