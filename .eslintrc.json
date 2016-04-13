@@ -1,6 +1,29 @@
 {
+    "parser": "babel-eslint",
     "extends": "airbnb/base",
     "rules" : {
-        "indent": [2, 4]
+        "indent": [2, 4],
+        "max-len" : [2, 180],
+        "comma-dangle": [2, "never"],
+        "space-before-function-paren" : [2, "always"],
+        "arrow-body-style" : [0],
+        "func-names" : [0],
+        "new-cap" : [2, {"capIsNewExceptions": ["Component"]}],
+        "brace-style" : [2, "stroustrup"],
+        "no-console" : [1, { "allow": ["warn", "error", "info", "debug"] }]
+    },
+    "globals": {
+        "angular": false,
+        "SEED_CORE" : false,
+        "spyOn" : false,
+        "jasmine" : false,
+        "describe": false,
+        "it": false,
+        "beforeAll": false,
+        "beforeEach": false,
+        "afterAll": false,
+        "afterEach": false,
+        "expect": false,
+        "$fixtures": true
     }
 }

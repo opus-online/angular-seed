@@ -2,7 +2,6 @@ import { buildMockComponent } from '@core';
 import component from './index.js';
 
 describe('users detail component', () => {
-
     let $element;
 
     beforeEach(() => {
@@ -21,5 +20,4 @@ describe('users detail component', () => {
         expect($element.html()).toContain('users id 12');
         expect($element.html()).toContain('users name Peeter');
     });
-
 });

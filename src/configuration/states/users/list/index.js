@@ -1,4 +1,4 @@
 export default {
-    url : '',
+    url: '',
     template: '<users-list/>'
-}
+};

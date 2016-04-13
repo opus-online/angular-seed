@@ -7,7 +7,7 @@ import { getPrototypeDecoratorValue, ENUMS } from './decorators.js';
  * Checks if the file is named index.js
  */
 export const indexFileValidator = ({ path }, { warn }) => {
-    if (resolveFileName(path) != 'index') {
+    if (resolveFileName(path) !== 'index') {
         warn(`${path} should be in a file index.js by convention.`);
     }
 };
@@ -18,7 +18,7 @@ export const indexFileValidator = ({ path }, { warn }) => {
  * @param value
  * @param warn
  */
-export const layoutConfigurationValidator = ({ name, value }, { warn}) => {
+export const layoutConfigurationValidator = ({ name, value }, { warn }) => {
     if (value.controller !== undefined) {
         warn(`Layout '${name}' has a controller attribute. This is probably an error.`);
     }
@@ -43,7 +43,6 @@ export const layoutConfigurationValidator = ({ name, value }, { warn}) => {
  * @param warn
  */
 export const stateConfigurationValidator = ({ name, value }, { warn }) => {
-
     const state = name.split('.');
 
     if (value.parent !== undefined && state.length > 1) {
@@ -56,7 +55,6 @@ export const stateConfigurationValidator = ({ name, value }, { warn }) => {
 };
 
 export const componentConfigurationValidator = ({ name, value }, { warn }) => {
-
     const config = getPrototypeDecoratorValue(value, ENUMS.COMPONENT);
     const prettyName = lodash.kebabCase(name);
 
@@ -70,5 +68,3 @@ export const componentConfigurationValidator = ({ name, value }, { warn }) => {
         warn(`Component '${prettyName}' does not have a template property. This is probably an error.`);
     }
 };
-
-

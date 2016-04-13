@@ -3,4 +3,4 @@ export default function () {
         console.log('getting path provider');
         return 'PATH';
     };
-};
+}

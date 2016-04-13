@@ -1,4 +1,4 @@
 export default {
-    url : '/:id',
+    url: '/:id',
     template: '<users-detail/>'
-}
+};
