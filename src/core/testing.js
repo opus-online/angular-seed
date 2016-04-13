@@ -12,6 +12,14 @@ export const buildMockComponent = (component, configure = () => {}, mockModuleNa
         let $scope = $injector.get('$rootScope').$new(true);
         compileComponent = (scopeAttributes = {}, domAttributes = {}) => {
 
+            const scopeAttributeKeys = Object.keys(scopeAttributes);
+            const domAttributeKeys = Object.keys(domAttributes);
+            const bothKeys = [].concat(scopeAttributeKeys, domAttributeKeys);
+
+            if (lodash.uniq(bothKeys).length !== (bothKeys.length)) {
+                console.warn('Duplicate keys found (in both scope and dom attributes). Will use scope attributes for the following keys: ' + lodash.intersection(scopeAttributeKeys, domAttributeKeys).join(', '));
+            }
+
             /**
              * Map over to the scope object
              */
@@ -34,7 +42,9 @@ export const buildMockComponent = (component, configure = () => {}, mockModuleNa
                 };
             });
 
-            const attributes = [].concat(scopeAttrs, domAttrs).map((attr) => {
+            const bothAttrs = [].concat(scopeAttrs, domAttrs);
+            const uniqueBothAttrs = lodash.uniqBy(bothAttrs, (value) => { return value.key; });
+            const attributes = uniqueBothAttrs.map((attr) => {
                 return attr.key + '=\'' + attr.value + '\'';
             }).join(' ');
 
@@ -45,3 +55,4 @@ export const buildMockComponent = (component, configure = () => {}, mockModuleNa
     });
     return compileComponent;
 };
+

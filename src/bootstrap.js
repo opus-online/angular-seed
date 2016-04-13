@@ -28,24 +28,24 @@ const options = { application, prefix, info, warn, debug, error };
 /**
  * Register configuration stuff
  */
-registerConfigs(require.context('./configuration/configs', true, /.js/), options);
-registerLayouts(require.context('./configuration/layouts', true, /.js/), options);
-registerStates(require.context('./configuration/states', true, /.js/), options);
+registerConfigs(require.context('./configuration/configs', true, /index.js/), options);
+registerLayouts(require.context('./configuration/layouts', true, /index.js/), options);
+registerStates(require.context('./configuration/states', true, /index.js/), options);
 
 /**
  * Register application stuff
  */
-registerComponents(require.context('./app/components', true, /.js/),  options);
-registerResources(require.context('./app/resources', true, /.js/), options);
-registerFactories(require.context('./app/factories', true, /.js/), options);
-registerServices(require.context('./app/services', true, /.js/), options);
-registerFilters(require.context('./app/filters', true, /.js/), options);
-registerProviders(require.context('./app/providers', true, /.js/), options);
+registerComponents(require.context('./app/components', true, /index.js/),  options);
+registerResources(require.context('./app/resources', true, /index.js/), options);
+registerFactories(require.context('./app/factories', true, /index.js/), options);
+registerServices(require.context('./app/services', true, /index.js/), options);
+registerFilters(require.context('./app/filters', true, /index.js/), options);
+registerProviders(require.context('./app/providers', true, /index.js/), options);
 
 /**
  * Register run stuff
  */
-registerRuns(require.context('./runs', true, /.js/), options);
+registerRuns(require.context('./runs', true, /index.js/), options);
 
 try {
     angular.bootstrap(document, [application.name]);

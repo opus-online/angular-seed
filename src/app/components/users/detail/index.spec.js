@@ -14,7 +14,7 @@ describe('users detail component', () => {
                 };
             });
         };
-        $element = buildMockComponent(component, configure)({ id : 12 }, { name : 'Peeter' });
+        $element = buildMockComponent(component, configure)($fixtures['users/peeter']);
     });
 
     it('should render the component and show the user id and name', () => {

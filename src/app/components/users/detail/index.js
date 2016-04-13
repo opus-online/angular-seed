@@ -3,7 +3,7 @@ import { Component } from '@core';
 @Component({
     bindings : {
         'id' : '=',
-        'name' : '@'
+        'name' : '='
     },
     template : `
         <h2>users id {{ vm.id }}</h2>
