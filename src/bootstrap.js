@@ -2,22 +2,22 @@ import { registerComponents, registerConfigs, registerRuns, registerLayouts, reg
     registerProviders, registerResources, registerFactories, registerServices, registerFilters } from '@core';
 
 const error = (...args) => {
-    if (SEED_CORE.DEVELOPMENT) {
+    if (SEED_CORE.ENV.NODE_ENV === 'development') {
         console.error.apply(console, ['[OPUS-SEED]', ...args]);
     }
 };
 const info = (...args) => {
-    if (SEED_CORE.DEVELOPMENT) {
+    if (SEED_CORE.ENV.NODE_ENV === 'development') {
         console.info.apply(console, ['[OPUS-SEED]', ...args]);
     }
 };
 const warn = (...args) => {
-    if (SEED_CORE.DEVELOPMENT) {
+    if (SEED_CORE.ENV.NODE_ENV === 'development') {
         console.warn.apply(console, ['[OPUS-SEED]', ...args]);
     }
 };
 const debug = (...args) => {
-    if (SEED_CORE.DEBUG) {
+    if (SEED_CORE.ENV.NODE_ENV === 'development') {
         console.debug.apply(console, ['[OPUS-SEED]', ...args]);
     }
 };

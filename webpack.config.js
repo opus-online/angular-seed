@@ -1,5 +1,10 @@
+require('dotenv').config({ silent: true });
+
 const webpack = require('webpack');
+
 const packageJson = require('./package.json');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 const config = {
     entry: {
@@ -33,17 +38,23 @@ const config = {
     plugins: [
         new webpack.DefinePlugin({
             SEED_CORE: {
-                DEVELOPMENT: true,
-                DEBUG: true,
                 VENDORS: JSON.stringify(packageJson.vendors),
                 DEPENDENCIES: {
                     ANGULAR: JSON.stringify(packageJson.angularDependencies)
-                }
+                },
+                ENV: JSON.stringify(process.env)
             }
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.bundle.js'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Opus',
+            template: 'src/index.ejs',
+            inject: true,
+            hash: true,
+            cache: true
         })
     ],
     devServer: {

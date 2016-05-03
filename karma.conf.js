@@ -1,4 +1,7 @@
-var path = require('path');
+const webpack = require('webpack');
+
+const packageJson = require('./package.json');
+const path = require('path');
 
 module.exports = function(config) {
     config.set({
@@ -30,9 +33,20 @@ module.exports = function(config) {
 
                         }
                     },
-                    {test: /\.html$/, loader: 'raw'}
+                    { test: /\.html$/, loader: 'raw' }
                 ]
             },
+            plugins: [
+                new webpack.DefinePlugin({
+                    SEED_CORE: {
+                        VENDORS: JSON.stringify(packageJson.vendors),
+                        DEPENDENCIES: {
+                            ANGULAR: JSON.stringify(packageJson.angularDependencies)
+                        },
+                        ENV: JSON.stringify(process.env)
+                    }
+                })
+            ],
             resolve: {
                 alias: {
                     '@core': __dirname + '/src/core.js'
