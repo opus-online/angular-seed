@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "precommit": "npm test",
     "lint": "eslint src/**/*.js",
     "dev": "webpack-dev-server",
     "pretest": "npm run lint",
@@ -22,7 +23,7 @@
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-config-google": "^0.5.0",
-    "git-hooks": "^1.0.2",
+    "husky": "^0.11.4",
     "jasmine-core": "^2.4.1",
     "json-loader": "^0.5.4",
     "karma": "^0.13.22",

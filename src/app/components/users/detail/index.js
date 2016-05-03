@@ -12,7 +12,4 @@ import { Component } from '@core';
     `
 })
 export default class {
-    constructor (Path) {
-        console.log('UsersDetailComponent', Path);
-    }
 }

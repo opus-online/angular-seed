@@ -10,7 +10,5 @@ import { Component } from '@core';
     `
 })
 export default class {
-    constructor (UserResource) {
-        console.log('UserListComponent', UserResource);
-    }
+
 }

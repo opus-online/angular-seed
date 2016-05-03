@@ -1,10 +1,10 @@
-var webpack = require('webpack');
-var packageJson = require('./package.json');
+const webpack = require('webpack');
+const packageJson = require('./package.json');
 
-var config = {
+const config = {
     entry: {
         app: './src/bootstrap.js',
-        vendor : packageJson.vendors
+        vendor: packageJson.vendors
     },
     output: {
         path: __dirname + '/www/',
@@ -22,7 +22,7 @@ var config = {
 
                 }
             },
-            {test: /\.html$/, loader: 'raw'}
+            { test: /\.html$/, loader: 'raw' }
         ]
     },
     resolve: {
@@ -32,18 +32,18 @@ var config = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            SEED_CORE : {
-                DEVELOPMENT : true,
-                DEBUG : true,
-                VENDORS :  JSON.stringify(packageJson.vendors),
-                DEPENDENCIES : {
-                    ANGULAR : JSON.stringify(packageJson.angularDependencies)
+            SEED_CORE: {
+                DEVELOPMENT: true,
+                DEBUG: true,
+                VENDORS: JSON.stringify(packageJson.vendors),
+                DEPENDENCIES: {
+                    ANGULAR: JSON.stringify(packageJson.angularDependencies)
                 }
             }
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name : 'vendor',
-            filename : 'vendor.bundle.js'
+            name: 'vendor',
+            filename: 'vendor.bundle.js'
         })
     ],
     devServer: {
@@ -63,7 +63,6 @@ var config = {
             chunkModules: false
         }
     }
-    //devtool: 'sourcemap'
 };
 
 module.exports = config;
