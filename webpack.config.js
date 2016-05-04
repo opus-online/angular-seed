@@ -1,4 +1,4 @@
-require('dotenv').config({ silent: true });
+require('dotenv-safe').load({ allowEmptyValues: true, silent: true });
 
 const webpack = require('webpack');
 
