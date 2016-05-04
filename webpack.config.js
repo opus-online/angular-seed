@@ -1,10 +1,12 @@
 require('dotenv-safe').load({ allowEmptyValues: true, silent: true });
 
 const webpack = require('webpack');
-
 const packageJson = require('./package.json');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+/**
+ * Webpack plugins
+ */
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
     entry: {
@@ -75,5 +77,27 @@ const config = {
         }
     }
 };
+
+if (process.env.NODE_ENV === 'production') {
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+        exclude: [
+            'application.bundle.js'
+        ],
+        compress: { warnings: false },
+        mangle: true
+    }));
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
+        include: [
+            'application.bundle.js'
+        ],
+        compress: { warnings: false },
+        mangle: false
+    }));
+}
+else if (process.env.NODE_ENV === 'development') {
+    config.plugins.push(new webpack.SourceMapDevToolPlugin({
+        filename: '[name].js.map'
+    }));
+}
 
 module.exports = config;
