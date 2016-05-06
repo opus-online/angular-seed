@@ -1,4 +1,4 @@
-import { registerComponents, registerConfigs, registerRuns, registerLayouts, registerStates,
+import { registerComponents, registerConfigs, registerRuns, registerLayouts, registerStates, registerConstants,
     registerProviders, registerResources, registerFactories, registerServices, registerFilters } from '@core';
 
 const error = (...args) => {
@@ -32,6 +32,7 @@ const options = { application, prefix, info, warn, debug, error };
 registerConfigs(require.context('./configuration/configs', true, /index.js/), options);
 registerLayouts(require.context('./configuration/layouts', true, /index.js/), options);
 registerStates(require.context('./configuration/states', true, /index.js/), options);
+registerConstants(require.context('./configuration/constants', true, /index.js/), options);
 
 /**
  * Register application stuff

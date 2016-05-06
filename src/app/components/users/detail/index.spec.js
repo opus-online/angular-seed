@@ -6,7 +6,7 @@ describe('users detail component', () => {
 
     beforeEach(() => {
         const configure = ($provide, $filterProvider) => {
-            $provide.constant('Path', 'FAKE_PATH_FROM_TEST');
+            $provide.constant('path', 'FAKE_PATH_FROM_TEST');
             $filterProvider.register('unixToDate', () => {
                 return function (input) {
                     return new Date(input * 1000);

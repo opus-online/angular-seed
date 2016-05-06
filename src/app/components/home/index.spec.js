@@ -1,4 +1,6 @@
 import { buildMockComponent } from '@core';
+import lodash from 'lodash';
+
 import component from './index.js';
 
 describe('home component', () => {
@@ -6,7 +8,9 @@ describe('home component', () => {
 
     beforeEach(() => {
         const configure = ($provide) => {
-            $provide.constant('Path', 'FAKE_PATH_FROM_TEST');
+            $provide.constant('path', 'FAKE_PATH_FROM_TEST');
+            $provide.constant('lodash', lodash);
+            $provide.constant('USER_TYPE', { ACTIVE: 'ACTIVE' });
         };
         $element = buildMockComponent(component, configure)();
     });

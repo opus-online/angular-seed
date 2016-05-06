@@ -8,7 +8,8 @@ import { Component } from '@core';
     `
 })
 export default class {
-    constructor () {
+    constructor (lodash, path, USER_TYPE) {
+        console.log('lodash', path, lodash, USER_TYPE);
         this.env = SEED_CORE.ENV;
     }
 }

@@ -21,7 +21,7 @@ export const registerComponents = createFolderNameRegistry(
 
 export const registerProviders = createFolderNameRegistry(
     'Provider',
-    [buildNameFromPath],
+    [buildNameFromPath, lodash.lowerFirst],
     [indexFileValidator],
     (application, name, value) => application.provider(name, value)
 );
@@ -31,6 +31,13 @@ export const registerRuns = createFolderNameRegistry(
     [() => 'N/A'],
     [indexFileValidator],
     (application, name, value) => application.run(value)
+);
+
+export const registerConstants = createFolderNameRegistry(
+    'Constant',
+    [buildNameFromPath, lodash.snakeCase, lodash.toUpper],
+    [indexFileValidator],
+    (application, name, value) => application.constant(name, value)
 );
 
 export const registerConfigs = createFolderNameRegistry(
