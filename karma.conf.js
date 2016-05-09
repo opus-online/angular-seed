@@ -1,16 +1,16 @@
+const env = require('./scripts/environment.js');
+
 const webpack = require('webpack');
-
 const packageJson = require('./package.json');
-const path = require('path');
 
-module.exports = function(config) {
+module.exports = function (config) {
     config.set({
 
         files: [
             'src/bootstrap.tests.js'
         ],
 
-        browsers : ['PhantomJS'],
+        browsers: ['PhantomJS'],
 
         frameworks: ['jasmine'],
 
@@ -20,7 +20,7 @@ module.exports = function(config) {
         },
 
         webpack: {
-            //loaders : [],
+            // loaders : [],
             module: {
                 loaders: [
                     {
@@ -43,13 +43,13 @@ module.exports = function(config) {
                         DEPENDENCIES: {
                             ANGULAR: JSON.stringify(packageJson.angularDependencies)
                         },
-                        ENV: JSON.stringify(process.env)
+                        ENV: JSON.stringify(env)
                     }
                 })
             ],
             resolve: {
                 alias: {
-                    '@core': __dirname + '/src/core.js'
+                    '@core': `${__dirname}/src/core.js`
                 }
             }
         },
