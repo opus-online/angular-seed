@@ -1,7 +1,13 @@
 require('dotenv-safe').load({ allowEmptyValues: true, silent: true });
 
+const fs = require('fs');
+const dotenv = require('dotenv-safe');
+const lodash = require('lodash');
 const webpack = require('webpack');
 const packageJson = require('./package.json');
+
+const envKeys = Object.keys(dotenv.parse(fs.readFileSync('.env.example')));
+const validEnv = lodash.pickBy(process.env, (value, key) => lodash.includes(envKeys, key));
 
 /**
  * Webpack plugins
@@ -44,7 +50,7 @@ const config = {
                 DEPENDENCIES: {
                     ANGULAR: JSON.stringify(packageJson.angularDependencies)
                 },
-                ENV: JSON.stringify(process.env)
+                ENV: JSON.stringify(validEnv)
             }
         }),
         new webpack.optimize.CommonsChunkPlugin({
