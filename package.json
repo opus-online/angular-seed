@@ -12,6 +12,10 @@
   },
   "author": "",
   "license": "ISC",
+  "engines" : {
+    "node" : "4.4.4",
+    "npm" : "2.15.1"
+  },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
     "babel-core": "^6.7.0",
