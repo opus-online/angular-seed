@@ -26,6 +26,13 @@ export const registerProviders = createFolderNameRegistry(
     (application, name, value) => application.provider(name, value)
 );
 
+export const registerDirectives = createFolderNameRegistry(
+    'Directive',
+    [buildNameFromPath, lodash.lowerFirst],
+    [indexFileValidator],
+    (application, name, value) => application.directive(name, value)
+);
+
 export const registerRuns = createFolderNameRegistry(
     'Run',
     [() => 'N/A'],

@@ -10,7 +10,8 @@
         "func-names" : [0],
         "new-cap" : [2, {"capIsNewExceptions": ["Component"]}],
         "brace-style" : [2, "stroustrup"],
-        "no-console" : [1, { "allow": ["warn", "error", "info", "debug"] }]
+        "no-console" : [1, { "allow": ["warn", "error", "info", "debug"] }],
+        "no-param-reassign" : [1]
     },
     "globals": {
         "angular": false,
@@ -19,6 +20,7 @@
         "jasmine" : false,
         "describe": false,
         "it": false,
+        "xit": false,
         "beforeAll": false,
         "beforeEach": false,
         "afterAll": false,
