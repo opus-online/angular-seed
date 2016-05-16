@@ -1,5 +1,7 @@
 const env = require('./scripts/environment.js');
 
+const path = require('path');
+
 const webpack = require('webpack');
 const packageJson = require('./package.json');
 
@@ -18,16 +20,12 @@ const config = {
         filename: 'application.bundle.js'
     },
     module: {
+        preLoaders: [],
         loaders: [
             {
                 test: /\.js$/,
                 exclude: [/node_modules/],
-                loader: 'babel',
-                query: {
-                    presets: ['es2015'],
-                    plugins: ['transform-decorators-legacy']
-
-                }
+                loader: 'babel'
             },
             { test: /\.html$/, loader: 'raw' }
         ]
@@ -65,7 +63,7 @@ const config = {
         quiet: false,
         filename: 'application.js',
         host: 'localhost',
-        port: 8100,
+        port: env.PORT,
         stats: {
             assets: false,
             colors: true,
@@ -98,6 +96,10 @@ else if (process.env.NODE_ENV === 'development') {
     config.plugins.push(new webpack.SourceMapDevToolPlugin({
         filename: '[name].js.map'
     }));
+    config.module.preLoaders.push({ test: /\.js$/, loader: 'eslint-loader?parser=babel-eslint', exclude: /node_modules/ });
+    config.eslint = {
+        configFile: path.join(__dirname, '.eslintrc') // parser doesn't work, needs to be defined in the loader section: https://github.com/MoOx/eslint-loader/issues/92
+    };
 }
 
 module.exports = config;

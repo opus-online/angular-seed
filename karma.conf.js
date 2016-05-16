@@ -26,12 +26,7 @@ module.exports = function (config) {
                     {
                         test: /\.js$/,
                         exclude: [/node_modules/],
-                        loader: 'babel',
-                        query: {
-                            presets: ['es2015'],
-                            plugins: ['transform-decorators-legacy']
-
-                        }
+                        loader: 'babel'
                     },
                     { test: /\.html$/, loader: 'raw' }
                 ]
@@ -53,12 +48,6 @@ module.exports = function (config) {
                 }
             }
         },
-        babelPreprocessor: {
-            options: {
-                presets: ['es2015']
-            }
-        },
-
         webpackMiddleware: {
             // webpack-dev-middleware configuration
             // i. e.
