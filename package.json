@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npm prune",
+    "precommit": "npm run test && npm run lint",
     "prestart": "webpack",
     "start": "node scripts/server.js",
-    "preinstall": "npm prune",
-    "precommit": "npm run lint",
     "lint": "eslint src/**/*.js",
     "dev": "webpack-dev-server",
     "build": "webpack",
