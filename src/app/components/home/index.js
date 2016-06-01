@@ -2,14 +2,9 @@ import { Component } from '@core';
 
 @Component({
     template: `
-        <h2>Home</h2>
-        <h3>Environmental variable</h3>
-        <pre>{{ vm.env | json }}</pre>
+        <h1 class="centered" style="height: 30%;">{{ 'Opus' | translate }}</h1>
+        <img class="centered" style="height: 100%; width: 100%;" src="/assets/logo.svg">
     `
 })
 export default class {
-    constructor (lodash, path, USER_TYPE) {
-        console.log('lodash', path, lodash, USER_TYPE);
-        this.env = SEED_CORE.ENV;
-    }
 }

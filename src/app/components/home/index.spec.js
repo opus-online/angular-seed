@@ -1,21 +1,19 @@
 import { buildMockComponent } from '@core';
-import lodash from 'lodash';
-
 import component from './index.js';
 
 describe('home component', () => {
     let $element;
-
+    const configure = ($filterProvider) => {
+        $filterProvider.register('translate', () => (input) => input);
+    };
     beforeEach(() => {
-        const configure = ($provide) => {
-            $provide.constant('path', 'FAKE_PATH_FROM_TEST');
-            $provide.constant('lodash', lodash);
-            $provide.constant('USER_TYPE', { ACTIVE: 'ACTIVE' });
-        };
         $element = buildMockComponent(component, configure)();
     });
+    it('should render the logo', () => {
+        expect($element.find('img').attr('src')).toBe('/assets/logo.svg');
+    });
 
-    it('should render the component', () => {
-        expect($element.html()).toContain('Home');
+    it('should render the title', () => {
+        expect($element.find('h1').text()).toBe('Opus');
     });
 });

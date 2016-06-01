@@ -1,6 +1,12 @@
 export default {
     template: `
-        <h1>Application layout</h1>
         <ui-view></ui-view>
-    `
+    `,
+    resolve: {
+        translations: ($rootScope, $q) => {
+            const deferred = $q.defer();
+            $rootScope.$on('$translateLoadingEnd', deferred.resolve);
+            return deferred.promise;
+        }
+    }
 };

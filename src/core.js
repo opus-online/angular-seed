@@ -19,6 +19,13 @@ export const registerComponents = createFolderNameRegistry(
     (application, name, component) => application.component(name, buildComponentConfig(component))
 );
 
+export const registerEnums = createFolderNameRegistry(
+    'Enum',
+    [buildNameFromPath, addNameSuffix('ENUM'), lodash.snakeCase, lodash.toUpper],
+    [indexFileValidator],
+    (application, name, value) => application.factory(name, value)
+);
+
 export const registerProviders = createFolderNameRegistry(
     'Provider',
     [buildNameFromPath, lodash.lowerFirst],

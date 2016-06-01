@@ -1,4 +1,4 @@
-import { registerComponents, registerConfigs, registerRuns, registerLayouts, registerStates, registerConstants,
+import { registerComponents, registerConfigs, registerRuns, registerLayouts, registerStates, registerConstants, registerEnums,
     registerProviders, registerResources, registerFactories, registerServices, registerFilters } from '@core';
 
 const error = (...args) => {
@@ -33,7 +33,6 @@ registerConfigs(require.context('./configuration/configs', true, /index.js/), op
 registerLayouts(require.context('./configuration/layouts', true, /index.js/), options);
 registerStates(require.context('./configuration/states', true, /index.js/), options);
 registerConstants(require.context('./configuration/constants', true, /index.js/), options);
-
 /**
  * Register application stuff
  */
@@ -43,6 +42,7 @@ registerFactories(require.context('./app/factories', true, /index.js/), options)
 registerServices(require.context('./app/services', true, /index.js/), options);
 registerFilters(require.context('./app/filters', true, /index.js/), options);
 registerProviders(require.context('./app/providers', true, /index.js/), options);
+registerEnums(require.context('./app/enums', true, /index.js/), options);
 
 /**
  * Register run stuff
