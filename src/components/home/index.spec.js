@@ -1,4 +1,4 @@
-import { buildMockComponent } from '@core';
+import { buildMockComponent } from 'opus-angular-seed-core';
 import component from './index.js';
 
 describe('home component', () => {

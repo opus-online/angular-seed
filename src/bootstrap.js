@@ -1,5 +1,5 @@
 import { registerComponents, registerConfigs, registerRuns, registerLayouts, registerStates, registerConstants, registerEnums,
-    registerProviders, registerResources, registerFactories, registerServices, registerFilters } from '@core';
+    registerProviders, registerResources, registerFactories, registerServices, registerFilters } from 'opus-angular-seed-core';
 
 const error = (...args) => {
     if (SEED_CORE.ENV.NODE_ENV === 'development') {
@@ -29,20 +29,20 @@ const options = { application, prefix, info, warn, debug, error };
 /**
  * Register configuration stuff
  */
-registerConfigs(require.context('./configuration/configs', true, /index.js/), options);
-registerLayouts(require.context('./configuration/layouts', true, /index.js/), options);
-registerStates(require.context('./configuration/states', true, /index.js/), options);
-registerConstants(require.context('./configuration/constants', true, /index.js/), options);
+registerConfigs(require.context('./configs', true, /index.js/), options);
+registerLayouts(require.context('./layouts', true, /index.js/), options);
+registerStates(require.context('./states', true, /index.js/), options);
+registerConstants(require.context('./constants', true, /index.js/), options);
 /**
  * Register application stuff
  */
-registerComponents(require.context('./app/components', true, /index.js/), options);
-registerResources(require.context('./app/resources', true, /index.js/), options);
-registerFactories(require.context('./app/factories', true, /index.js/), options);
-registerServices(require.context('./app/services', true, /index.js/), options);
-registerFilters(require.context('./app/filters', true, /index.js/), options);
-registerProviders(require.context('./app/providers', true, /index.js/), options);
-registerEnums(require.context('./app/enums', true, /index.js/), options);
+registerComponents(require.context('./components', true, /index.js/), options);
+registerResources(require.context('./resources', true, /index.js/), options);
+registerFactories(require.context('./factories', true, /index.js/), options);
+registerServices(require.context('./services', true, /index.js/), options);
+registerFilters(require.context('./filters', true, /index.js/), options);
+registerProviders(require.context('./providers', true, /index.js/), options);
+registerEnums(require.context('./enums', true, /index.js/), options);
 
 /**
  * Register run stuff

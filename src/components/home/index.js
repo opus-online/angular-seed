@@ -1,4 +1,4 @@
-import { Component } from '@core';
+import { Component } from 'opus-angular-seed-core';
 
 @Component({
     template: `

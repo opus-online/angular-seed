@@ -7,7 +7,7 @@ module.exports = function (config) {
     config.set({
 
         files: [
-            'src/bootstrap.tests.js'
+            'test/bootstrap.tests.js'
         ],
 
         browsers: ['PhantomJS'],
@@ -16,7 +16,7 @@ module.exports = function (config) {
 
         preprocessors: {
             // add webpack as preprocessor
-            'src/bootstrap.tests.js': ['webpack']
+            'test/bootstrap.tests.js': ['webpack']
         },
 
         webpack: {
@@ -41,12 +41,7 @@ module.exports = function (config) {
                         ENV: JSON.stringify(env)
                     }
                 })
-            ],
-            resolve: {
-                alias: {
-                    '@core': `${__dirname}/src/core.js`
-                }
-            }
+            ]
         },
         webpackMiddleware: {
             // webpack-dev-middleware configuration

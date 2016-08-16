@@ -30,11 +30,6 @@ const config = {
             { test: /\.html$/, loader: 'raw' }
         ]
     },
-    resolve: {
-        alias: {
-            '@core': __dirname + '/src/core.js'
-        }
-    },
     plugins: [
         new webpack.DefinePlugin({
             SEED_CORE: {
@@ -59,10 +54,11 @@ const config = {
     ],
     devServer: {
         contentBase: 'www',
+        historyApiFallback: true,
         inline: true,
         quiet: false,
         filename: 'application.js',
-        host: 'localhost',
+        host: '0.0.0.0',
         port: env.PORT,
         stats: {
             assets: false,
