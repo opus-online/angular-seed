@@ -10,7 +10,7 @@
         "func-names" : [0],
         "new-cap" : [2, {"capIsNewExceptions": ["Component"]}],
         "brace-style" : [2, "stroustrup"],
-        "no-console" : [1, { "allow": ["warn", "error", "info", "debug"] }],
+        "no-console" : [1, { "allow": ["warn", "error", "info", "debug", "groupCollapsed", "groupEnd"] }],
         "no-param-reassign" : [1]
     },
     "globals": {

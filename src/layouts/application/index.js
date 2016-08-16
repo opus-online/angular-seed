@@ -2,7 +2,6 @@ export default {
     template: `
         <ui-view></ui-view>
     `,
-    abstract: true,
     resolve: {
         translations: ($rootScope, $q) => {
             const deferred = $q.defer();
