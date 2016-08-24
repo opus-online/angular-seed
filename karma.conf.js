@@ -5,22 +5,19 @@ const packageJson = require('./package.json');
 
 module.exports = function (config) {
     config.set({
-
         files: [
             'test/bootstrap.tests.js'
         ],
+        reporters: ['spec'],
 
         browsers: ['PhantomJS'],
 
         frameworks: ['jasmine'],
 
         preprocessors: {
-            // add webpack as preprocessor
             'test/bootstrap.tests.js': ['webpack']
         },
-
         webpack: {
-            // loaders : [],
             module: {
                 loaders: [
                     {

@@ -2,16 +2,16 @@
     "parser": "babel-eslint",
     "extends": "airbnb/base",
     "rules" : {
-        "indent": [2, 4],
-        "max-len" : [2, 180],
-        "comma-dangle": [2, "never"],
-        "space-before-function-paren" : [2, "always"],
-        "arrow-body-style" : [0],
-        "func-names" : [0],
-        "new-cap" : [2, {"capIsNewExceptions": ["Component"]}],
-        "brace-style" : [2, "stroustrup"],
-        "no-console" : [1, { "allow": ["warn", "error", "info", "debug", "groupCollapsed", "groupEnd"] }],
-        "no-param-reassign" : [1]
+        "indent": ["error", 4],
+        "max-len" : ["error", 180],
+        "comma-dangle": ["error", "never"],
+        "space-before-function-paren" : ["error", "always"],
+        "arrow-body-style" : ["off"],
+        "func-names" : ["off"],
+        "new-cap" : ["error", {"capIsNewExceptions": ["Component"]}],
+        "brace-style" : ["error", "stroustrup"],
+        "no-console" : ["warn", { "allow": ["warn", "error", "info", "debug", "groupCollapsed", "groupEnd"] }],
+        "no-param-reassign" : ["off"]
     },
     "globals": {
         "angular": false,
