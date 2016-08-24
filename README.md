@@ -126,7 +126,7 @@ All elements in the `src/` folder are autoloaded and registered with Angular.
 
 |Type|File path|Registered as (in Angular)|
 |---|---|---|
-|[Component](examples/01-components.md)|src/components/user/list/index.js|	userList (user-list in templates)|
+|[Component](docs/examples/01-components.md)|src/components/user/list/index.js|	userList (user-list in templates)|
 |[Configs](docs/examples/02-configs.md)|src/configs/routing/index.js|N/A (these are just functions ran at config time)|
 |[Constants](docs/examples/03-constants.md)|src/constants/userType/index.js|USER_TYPE|
 |[Enums](docs/examples/04-enums.md)|src/enums/user/type/index.js|USER_TYPE_ENUM|
