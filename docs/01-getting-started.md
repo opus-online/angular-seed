@@ -13,7 +13,7 @@ Clone the angular-seed repository using git:
 
 ```
 git clone --depth=1 REPO-URL
-cd opus-angular-seed
+cd angular-seed
 ```
 
 ## Install Dependencies
