@@ -2,8 +2,6 @@
 
 This repository is a collection of best practices used in developing single page applications at [Opus Online](http://opusonline.co/)
 
-## Documentation
-
 # Getting Started
 
 To get you started you can simply clone the repository and install the dependencies.
@@ -28,10 +26,9 @@ cd angular-seed
 npm install
 ```
 
+# Running the application
 
-### NPM scripts (running the application)
-
-#### Development scripts
+## Development scripts
 |Command|Description|
 |---|---|
 |npm run dev|Runs webpack dev server and serves the development version of the site on localhost:PORT|
@@ -40,31 +37,31 @@ npm install
 |npm run test:watch|Watches your tests / source files for changes and re-runs the tests
 |npm run extract|Extracts all your translations from your code and stores them in the [www/languages/](www/languages/) folder
 
-#### Production scripts
+## Production scripts
 |Command|Description|
 |---|---|
 |npm run build|Builds the site for production|
 |npm run start|Runs npm run build && stars a node server that serves the WWW folder on localhost:PORT|
 
-### Configuring the application
-#### Environmental settings
+# Configuring the application
+## Environmental settings
 
 Copy and paste the .env.example file and rename it to .env.
 All keys present in the .env.example file need to be defined in the .env file. They can be empty, but they have to be defined.
 All variables will be available via the global variable `SEED_CORE.ENV` in your angular application.
 
-##### .env file
+### .env file
 
 ```bash
 NODE_ENV=production
 ```
 
-##### .env.example.file
+### .env.example.file
 ```
 NODE_ENV=development
 ```
 
-#### Example of using an environmental variable in a service
+### Example of using an environmental variable in a service
 
 ```
 export default class {
@@ -74,7 +71,7 @@ export default class {
 }
 ```
 
-#### Defining the `PORT` variables
+### Defining the `PORT` variables
 
 Define the `PORT` variable in your `.env` file. This is the port your application will be served on (either via `npm start` or via `npm run dev`)
 
@@ -82,20 +79,21 @@ Define the `PORT` variable in your `.env` file. This is the port your applicatio
 PORT=8080
 ```
 
-#### Defining `BASIC_AUTH_USERNAME` / `BASIC_AUTH_PASSWORD` variables
+### Defining `BASIC_AUTH_USERNAME` / `BASIC_AUTH_PASSWORD` variables
 
 Define the variables in your .env file. These can be left empty if you do not wish to protect your site with a username & password. **Only applies to `npm start`**
 
-#### `production` vs `development` environment
+## `production` vs `development` environment
+### `production`
+* Automatically minifies javascript
+### `development`
+* Enables SEED_CORE debugging in Developer tools
+    * ![Developer tools](http://puu.sh/qMTeL/2d396de792.png)
+* Enables source maps
+* Adds an eslint preloader that shows your code style errors in Developer tools
+    * ![Developer tools](http://puu.sh/qMVbm/47dcd798bc.png)
 
-|Setting|Result|
-|---|---|
-|NODE_ENV=development| <ul><li>Enables SEED_CORE debugging</li><li>Enables source maps</li><li>Adds an eslint preloader that shows your code style errors in the console</li></ul>
-|NODE_ENV=production|<ul><li>Automatically minifies javascript</li></ul>
-
-
-
-### Directory Layout
+# Directory Layout
 ```
 scripts/                --> all your node scripts
     environement.js         --> exports all the enviromental variables defined in .env.example
@@ -122,7 +120,7 @@ www/                    --> all your non-code files
     assets/                 --> all your web application assets (styles etc)
     languages/              --> all your translation files
 ```
-### Autoloading
+# Autoloading
 
 All elements in the `src/` folder are autoloaded and registered with Angular.
 
