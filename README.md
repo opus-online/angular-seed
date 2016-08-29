@@ -1,4 +1,4 @@
-# opus-angular-seed
+**opus-angular-seed**
 
 This repository is a collection of best practices used in developing single page applications at [Opus Online](http://opusonline.co/)
 
@@ -200,3 +200,117 @@ All elements in the `src/` folder are autoloaded and registered with Angular.
 |[Runs](docs/examples/10-runs.md)|src/runs/user/index.js|N/A (these are just functions ran at run time)|
 |[Services](docs/examples/11-services.md)|src/services/toast/index.js|ToastService|
 |[States](docs/examples/12-states.md)|src/states/user/home/index.js|user.home (states/user/index.js state needs to exist)|
+
+# Testing
+
+We generally try to keep all logic within 4 types of elements. Here's a list of them and examples how to write tests for them:
+
+* [Component](docs/examples/01-components.md)
+* [Factories](docs/examples/05-factories.md)
+* [Filters](docs/examples/06-filters.md)
+* [Services](docs/examples/11-services.md)
+
+## Fixtures
+
+Fixtures are automatically loaded from `test/fixtures/` folder and are available in tests via the global variable `$FIXTURES`
+
+Example fixture `test/fixtures/users/peeter.js`
+
+```javascript
+export default {
+    id: 12,
+    name: 'Peeter'
+};
+```
+
+Using in tests:
+
+```javascript
+console.log($fixtures['users/peeter']); // { id: 12, name: 'Peeter' }
+```
+
+# Translations
+
+We use [angular-translate](https://angular-translate.github.io/) to translate our applications
+
+## Usage in templates
+
+Angular translate provides an angular filter called translate. Example:
+
+```html
+<b>{{ 'TRANSLATE_STRING' | translate }}</b>
+```
+
+You can also pass in variables to the translate string
+```html
+{{ 'TRANSLATE_STRING' | translate:{count:10} }}
+```
+## Usage in Javascript
+
+Angular translate provides an angular service called $translate. Example:
+
+```javascript
+export default class {
+    constructor ($translate) {
+        console.log($translate.instant('TRANSLATE_STRING'));
+    }
+}
+```
+
+You can also pass in variables to the translate string
+
+```javascript
+export default class {
+    constructor ($translate) {
+        console.log($translate.instant('TRANSLATE_STRING'), { count : 10 });
+    }
+}
+```
+
+## Extracting messages
+
+The npm command `extract` will find all your translations and store them at the "www/languages/" folder. An example file:
+
+```json
+{
+    "TRANSLATE_STRING": "The string that will be shown in the UI"
+}
+```
+
+## Variable replacement
+
+Since we use [angular-translate-interpolation-messageformat](https://angular-translate.github.io/docs/#/guide/14_pluralization) all variables you pass need use single brackets instead of double.
+
+```json
+{
+    "TRANSLATE_STRING": "The string that will be shown in the UI, count: { count }"
+}
+```
+
+## MessageFormat (plural, gender etc)
+
+You can use the messageformat extension in your translations. For example:
+
+```json
+
+{
+    "TRANSLATE_STRING": "{count, plural, one {# unit} other {# units}}"
+}
+```
+
+will render either "10 units" or "1 unit", depending on the count you pass along.
+
+## Gotcha's
+
+The application layout will block rendering the UI until translations have loaded @[src/layouts/application/index.js](src/layouts/application/index.js)
+This is because otherwise ENUM labels will not be translated.
+
+# Githooks
+
+We use the plugin https://github.com/typicode/husky/ to manage githooks. Husky supports all git hooks (https://git-scm.com/docs/githooks). Simply add the corresponding npm script to your [package.json](package.json).
+
+## List of installed hooks
+
+|Hook|Command|
+|---|---|
+|precommit|npm test && npm run lint|
