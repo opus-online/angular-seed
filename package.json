@@ -1,8 +1,8 @@
 {
   "name": "opus-angular-seed",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "An opinionanted angular 1.5 seed project",
+  "main": "src/boostrap.js",
   "scripts": {
     "preinstall": "npm prune",
     "precommit": "npm run test && npm run lint",
@@ -15,7 +15,7 @@
     "test": "karma start --single-run",
     "test:watch": "karma start"
   },
-  "author": "",
+  "author": "Peeter Tomberg",
   "license": "ISC",
   "engines": {
     "node": "4.4.4",

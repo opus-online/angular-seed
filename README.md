@@ -44,6 +44,68 @@ npm install
 |npm run start|Runs npm run build && stars a node server that serves the WWW folder on localhost:PORT|
 
 # Configuring the application
+
+## Global variables
+
+There's only one global variable named `SEED_CORE`. It's defined via [webpack.DefinePlugin](https://webpack.github.io/docs/list-of-plugins.html#defineplugin), which means it's not accessible through your developer console but can be read by your application.
+
+## Configuring vendors
+
+Open [package.json](package.json) and add a new key to the vendors array
+
+|Key|Description|Globally available as|
+|---|---|---|
+|vendors|NPM packages that are automatically bundled as `vendor.bundle.js` and loaded before your application|`SEED_CORE.VENDORS`|
+
+```json
+{
+  "name": "opus-angular-seed",
+  "version": "0.0.1",
+  "description": "An opinionanted angular 1.5 seed project",
+  "main": "src/boostrap.js",
+  "vendors": [
+    "lodash",
+    "angular",
+    "angular-resource",
+    "angular-ui-router",
+    "angular-translate",
+    "angular-translate-loader-static-files",
+    "angular-translate-interpolation-messageformat"
+  ]
+}
+```
+
+
+## Configuring angular dependencies
+
+Open [package.json](package.json) and add a new key to the angularDependencies array
+
+
+
+|Key|Description|Globally available as|
+|---|---|---|
+|angularDependencies|Dependencies that are registered when creating the angular application.|`SEED_CORE.DEPENDENCIES.ANGULAR`|
+
+```json
+{
+  "name": "opus-angular-seed",
+  "version": "0.0.1",
+  "description": "An opinionanted angular 1.5 seed project",
+  "main": "src/boostrap.js",
+  "angularDependencies": [
+    "ui.router",
+    "ngResource",
+    "pascalprecht.translate"
+  ]
+}
+
+```
+
+```javascript
+const application = angular.module('app', SEED_CORE.DEPENDENCIES.ANGULAR);
+```
+
+
 ## Environmental settings
 
 Copy and paste the .env.example file and rename it to .env.
