@@ -21,3 +21,51 @@ export default function (USER_STATUS_ENUM, User) {
 |File path|Registered as (in Angular)|
 |---|---|
 |src/factories/user/index.js|UserFactory|
+
+# Testing factories
+
+Factories are just Javascript files that export a function.
+Testing Factories is as simple as requiring the Factory and running the Function with the mocked dependecies
+
+## A simple factory example
+
+Factory:
+
+```javascript
+export default function (lodash, LogEntry) {
+    const defaults = {
+		type: 'USER_GENERATED'
+    };
+    return {
+        createNewLogEntry: (options) => {
+            return new LogEntry(lodash.extend({}, defaults, options));
+        }
+    };
+}
+
+```
+
+Test:
+
+```javascript
+import factory from './index.js';
+import lodash from 'lodash';
+
+describe('logbook factory', () => {
+    let logbookFactory;
+    let Logbook;
+    beforeEach(() => {
+        Logbook = jasmine.createSpy('Logbook');
+        logbookFactory = factory(lodash, Logbook);
+    });
+    describe('createNewLogEntry', () => {
+        it('should create a new Logbook object', () => {
+            logbookFactory.createNewLogEntry({ id: 3 });
+            expect(Logbook).toHaveBeenCalledWith({
+                id: 3,
+                type: 'USER_GENERATED'
+            });
+        });
+    });
+});
+```

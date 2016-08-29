@@ -193,3 +193,15 @@ describe('users detail component', () => {
     });
 });
 ```
+
+## Accessing the component controller
+
+```javascript
+$element.controller('test');
+```
+
+## Accessing the component scope
+
+```javascript
+$element.scope()
+```
