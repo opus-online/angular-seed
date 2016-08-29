@@ -1,3 +1,13 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [Understanding layouts](#markdown-header-understanding-layouts)
+    - [Example layout (index.js file contents)](#markdown-header-example-layout-indexjs-file-contents)
+    - [Autoloading](#markdown-header-autoloading)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Understanding layouts
 
 Layouts are just root [states](12-states.md) that other states can inherit from. In a single page application that has both public and private routes you'll typically have 3 layouts:

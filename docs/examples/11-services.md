@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [Understanding services](#markdown-header-understanding-services)
+    - [Example service (index.js file contents)](#markdown-header-example-service-indexjs-file-contents)
+    - [Autoloading](#markdown-header-autoloading)
+- [Testing services](#markdown-header-testing-services)
+    - [A simple service example](#markdown-header-a-simple-service-example)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Understanding services
 
 * [Angular documentation](https://docs.angularjs.org/guide/services)

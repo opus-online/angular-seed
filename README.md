@@ -1,3 +1,7 @@
+**opus-angular-seed**
+
+This repository is a collection of best practices used in developing single page applications at [Opus Online](http://opusonline.co/)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
@@ -37,10 +41,6 @@
     - [List of installed hooks](#markdown-header-list-of-installed-hooks)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-**opus-angular-seed**
-
-This repository is a collection of best practices used in developing single page applications at [Opus Online](http://opusonline.co/)
 
 # Getting Started
 

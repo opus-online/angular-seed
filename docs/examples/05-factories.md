@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [Understanding factories](#markdown-header-understanding-factories)
+    - [Example factory (index.js file contents)](#markdown-header-example-factory-indexjs-file-contents)
+    - [Autoloading](#markdown-header-autoloading)
+- [Testing factories](#markdown-header-testing-factories)
+    - [A simple factory example](#markdown-header-a-simple-factory-example)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Understanding factories
 
 * [Angular documentation](https://docs.angularjs.org/guide/providers#factory-recipe)

@@ -1,3 +1,15 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [Understanding filters](#markdown-header-understanding-filters)
+    - [Example filter (index.js file contents)](#markdown-header-example-filter-indexjs-file-contents)
+    - [Autoloading](#markdown-header-autoloading)
+- [Testing filters](#markdown-header-testing-filters)
+    - [A simple filter example](#markdown-header-a-simple-filter-example)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Understanding filters
 
 * [Angular documentation](https://docs.angularjs.org/guide/filter)
