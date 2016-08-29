@@ -16,6 +16,11 @@
     "test:watch": "karma start"
   },
   "author": "Peeter Tomberg",
+  "contributors": [
+    "Manuel Vulp",
+    "Mikk Mõistlik",
+    "Raul Viskar"
+  ],
   "license": "ISC",
   "engines": {
     "node": "4.4.4",
