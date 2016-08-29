@@ -1,3 +1,43 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Contents**
+
+- [Getting Started](#markdown-header-getting-started)
+    - [Prerequisites](#markdown-header-prerequisites)
+    - [Clone opus-angular-seed](#markdown-header-clone-opus-angular-seed)
+    - [Install Dependencies](#markdown-header-install-dependencies)
+- [Running the application](#markdown-header-running-the-application)
+    - [Development scripts](#markdown-header-development-scripts)
+    - [Production scripts](#markdown-header-production-scripts)
+- [Configuring the application](#markdown-header-configuring-the-application)
+    - [Global variables](#markdown-header-global-variables)
+    - [Configuring vendors](#markdown-header-configuring-vendors)
+    - [Configuring angular dependencies](#markdown-header-configuring-angular-dependencies)
+    - [Environmental settings](#markdown-header-environmental-settings)
+        - [.env file](#markdown-header-env-file)
+        - [.env.example.file](#markdown-header-envexamplefile)
+        - [Example of using an environmental variable in a service](#markdown-header-example-of-using-an-environmental-variable-in-a-service)
+        - [Defining the `PORT` variables](#markdown-header-defining-the-port-variables)
+        - [Defining `BASIC_AUTH_USERNAME` / `BASIC_AUTH_PASSWORD` variables](#markdown-header-defining-basic_auth_username-basic_auth_password-variables)
+        - [`production` vs `development` environment](#markdown-header-production-vs-development-environment)
+            - [`production`](#markdown-header-production)
+            - [`development`](#markdown-header-development)
+- [Directory Layout](#markdown-header-directory-layout)
+- [Autoloading](#markdown-header-autoloading)
+- [Testing](#markdown-header-testing)
+    - [Fixtures](#markdown-header-fixtures)
+- [Translations](#markdown-header-translations)
+    - [Usage in templates](#markdown-header-usage-in-templates)
+    - [Usage in Javascript](#markdown-header-usage-in-javascript)
+    - [Extracting messages](#markdown-header-extracting-messages)
+    - [Variable replacement](#markdown-header-variable-replacement)
+    - [MessageFormat (plural, gender etc)](#markdown-header-messageformat-plural-gender-etc)
+    - [Gotcha's](#markdown-header-gotchas)
+- [Githooks](#markdown-header-githooks)
+    - [List of installed hooks](#markdown-header-list-of-installed-hooks)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 **opus-angular-seed**
 
 This repository is a collection of best practices used in developing single page applications at [Opus Online](http://opusonline.co/)
@@ -145,15 +185,16 @@ PORT=8080
 
 Define the variables in your .env file. These can be left empty if you do not wish to protect your site with a username & password. **Only applies to `npm start`**
 
-## `production` vs `development` environment
-### `production`
-* Automatically minifies javascript
-### `development`
-* Enables SEED_CORE debugging in Developer tools
-    * ![Developer tools](http://puu.sh/qMTeL/2d396de792.png)
-* Enables source maps
-* Adds an eslint preloader that shows your code style errors in Developer tools
-    * ![Developer tools](http://puu.sh/qMVbm/47dcd798bc.png)
+### `production` vs `development` environment
+#### `production`
+- Automatically minifies javascript
+
+#### `development`
+- Enables SEED_CORE debugging in Developer tools
+    - ![Developer tools](http://puu.sh/qMTeL/2d396de792.png)
+- Enables source maps
+- Adds an eslint preloader that shows your code style errors in Developer tools
+    - ![Developer tools](http://puu.sh/qMVbm/47dcd798bc.png)
 
 # Directory Layout
 ```
