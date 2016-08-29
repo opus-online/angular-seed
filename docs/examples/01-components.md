@@ -48,3 +48,148 @@ export default class {
 |---|---|
 |src/components/user/list/index.js|	userList (user-list in templates)|
 
+
+# Testing components
+
+## A simple component example
+
+Component:
+
+```javascript
+import { Component } from '@core';
+
+@Component({
+    template: `
+        <h2>Account settings</h2>
+    `
+})
+export default class {
+}
+```
+
+Test:
+
+```Javascript
+import { buildMockComponent } from '@core';
+import component from './index.js';
+
+describe('account settings component', () => {
+    let $element;
+
+    beforeEach(() => {
+        $element = buildMockComponent(component)();
+    });
+
+    it('should render the account settings page', () => {
+        expect($element.html()).toContain('Account settings');
+    });
+});
+```
+
+## Mocking Component dependencies
+
+```javascript
+$element = buildMockComponent(component, {
+    $state: 'fakeState',
+    $http: 'fakeHttp'
+})();
+```
+
+## Mocking Component filters
+
+```
+const configure = ($provide, $filterProvider) => {
+    $provide.constant('path', 'FAKE_PATH_FROM_TEST');
+    $filterProvider.register('unixToDate', () => {
+        return function (input) {
+            return new Date(input * 1000);
+        };
+    });
+};
+$element = buildMockComponent(component, configure)();
+```
+List of custom providers: https://docs.angularjs.org/api/ng/provider
+
+## Providing data to Components via $scope
+
+Example scope bindings component:
+
+```javascript
+
+import { Component } from '@core';
+
+@Component({
+    bindings: {
+        id: '=',
+        name: '='
+    },
+    template: `
+        <h2>users id {{ vm.id }}</h2>
+        <h2>users name {{ vm.name }}</h2>
+    `
+})
+export default class {
+}
+```
+Example scope bindings component test:
+
+```javascript
+import { buildMockComponent } from '@core';
+import component from './index.js';
+
+describe('users detail component', () => {
+    let $element;
+
+    beforeEach(() => {
+        $element = buildMockComponent(component)({ id: 12, name: 'Peeter' });
+    });
+
+    it('should render the component and show the user id and name', () => {
+        expect($element.html()).toContain('users id 12');
+        expect($element.html()).toContain('users name Peeter');
+    });
+});
+```
+
+## Providing data to Components via dom attributes
+
+Example dom bindings component:
+
+```javascript
+import { Component } from '@core';
+
+@Component({
+    bindings: {
+        name: '@'
+    },
+    template: `
+        <h2>users name {{ vm.name }}</h2>
+    `
+})
+export default class {
+}
+```
+Example usage:
+```html
+<test name="Peeter"></test>
+```
+
+Example dom bindings component test:
+
+```javascript
+
+import { buildMockComponent } from '@core';
+import component from './index.js';
+
+describe('users detail component', () => {
+    let $element;
+
+    beforeEach(() => {
+        $element = buildMockComponent(component)({}, { name: 'Peeter' });
+    });
+
+    it('should render the component and show the user id and name', () => {
+        expect($element.html()).toContain('users name Peeter');
+    });
+});
+```
