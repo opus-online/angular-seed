@@ -56,7 +56,7 @@ To get you started you can simply clone the repository and install the dependenc
 Clone the angular-seed repository using git:
 
 ```
-git clone --depth=1 REPO-URL
+git clone --depth=1 git@github.com:opus-online/angular-seed.git
 cd angular-seed
 ```
 
