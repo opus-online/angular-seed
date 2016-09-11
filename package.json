@@ -5,7 +5,6 @@
   "main": "src/boostrap.js",
   "scripts": {
     "preinstall": "npm prune",
-    "precommit": "npm run test && npm run lint",
     "prestart": "webpack",
     "start": "node scripts/server.js",
     "lint": "eslint src/**/*.js",
@@ -39,7 +38,7 @@
     "karma-phantomjs-launcher": "1.0.0",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "1.8.0",
-    "opus-angular-seed-core": "git+ssh://git@bitbucket.org/opus-online/angular-seed-core.git",
+    "opus-angular-seed-core": "1.0.0",
     "phantomjs-prebuilt": "2.1.5",
     "q": "1.4.1",
     "raw-loader": "0.5.1",

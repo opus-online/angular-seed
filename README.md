@@ -349,9 +349,3 @@ This is because otherwise ENUM labels will not be translated.
 # Githooks
 
 We use the plugin https://github.com/typicode/husky/ to manage githooks. Husky supports all git hooks (https://git-scm.com/docs/githooks). Simply add the corresponding npm script to your [package.json](package.json).
-
-## List of installed hooks
-
-|Hook|Command|
-|---|---|
-|precommit|npm test && npm run lint|
