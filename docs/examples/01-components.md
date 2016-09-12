@@ -1,18 +1,18 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding components](#markdown-header-understanding-components)
-    - [Example component `user-list` (index.js file contents)](#markdown-header-example-component-user-list-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
-- [Testing components](#markdown-header-testing-components)
-    - [A simple component example](#markdown-header-a-simple-component-example)
-    - [Mocking Component dependencies](#markdown-header-mocking-component-dependencies)
-    - [Mocking Component filters](#markdown-header-mocking-component-filters)
-    - [Providing data to Components via $scope](#markdown-header-providing-data-to-components-via-scope)
-    - [Providing data to Components via dom attributes](#markdown-header-providing-data-to-components-via-dom-attributes)
-    - [Accessing the component controller](#markdown-header-accessing-the-component-controller)
-    - [Accessing the component scope](#markdown-header-accessing-the-component-scope)
+- [Understanding components](#understanding-components)
+  - [Example component `user-list` (index.js file contents)](#example-component-user-list-indexjs-file-contents)
+  - [Autoloading](#autoloading)
+- [Testing components](#testing-components)
+  - [A simple component example](#a-simple-component-example)
+  - [Mocking Component dependencies](#mocking-component-dependencies)
+  - [Mocking Component filters](#mocking-component-filters)
+  - [Providing data to Components via $scope](#providing-data-to-components-via-scope)
+  - [Providing data to Components via dom attributes](#providing-data-to-components-via-dom-attributes)
+  - [Accessing the component controller](#accessing-the-component-controller)
+  - [Accessing the component scope](#accessing-the-component-scope)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

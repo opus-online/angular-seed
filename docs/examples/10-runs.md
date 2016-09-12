@@ -1,10 +1,10 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding runs](#markdown-header-understanding-runs)
-    - [Example run (index.js file contents)](#markdown-header-example-run-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
+- [Understanding runs](#understanding-runs)
+  - [Example run (index.js file contents)](#example-run-indexjs-file-contents)
+  - [Autoloading](#autoloading)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

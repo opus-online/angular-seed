@@ -1,12 +1,12 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding services](#markdown-header-understanding-services)
-    - [Example service (index.js file contents)](#markdown-header-example-service-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
-- [Testing services](#markdown-header-testing-services)
-    - [A simple service example](#markdown-header-a-simple-service-example)
+- [Understanding services](#understanding-services)
+  - [Example service (index.js file contents)](#example-service-indexjs-file-contents)
+  - [Autoloading](#autoloading)
+- [Testing services](#testing-services)
+  - [A simple service example](#a-simple-service-example)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

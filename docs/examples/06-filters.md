@@ -1,12 +1,12 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding filters](#markdown-header-understanding-filters)
-    - [Example filter (index.js file contents)](#markdown-header-example-filter-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
-- [Testing filters](#markdown-header-testing-filters)
-    - [A simple filter example](#markdown-header-a-simple-filter-example)
+- [Understanding filters](#understanding-filters)
+  - [Example filter (index.js file contents)](#example-filter-indexjs-file-contents)
+  - [Autoloading](#autoloading)
+- [Testing filters](#testing-filters)
+  - [A simple filter example](#a-simple-filter-example)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

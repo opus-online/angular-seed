@@ -1,10 +1,10 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding configs](#markdown-header-understanding-configs)
-    - [Example config block (index.js file contents)](#markdown-header-example-config-block-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
+- [Understanding configs](#understanding-configs)
+  - [Example config block (index.js file contents)](#example-config-block-indexjs-file-contents)
+  - [Autoloading](#autoloading)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

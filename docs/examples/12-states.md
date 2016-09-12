@@ -1,10 +1,10 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding states](#markdown-header-understanding-states)
-    - [Example state (index.js file contents)](#markdown-header-example-state-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
+- [Understanding states](#understanding-states)
+  - [Example state (index.js file contents)](#example-state-indexjs-file-contents)
+  - [Autoloading](#autoloading)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

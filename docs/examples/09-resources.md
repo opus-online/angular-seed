@@ -1,10 +1,10 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding resources](#markdown-header-understanding-resources)
-    - [Example resource (index.js file contents)](#markdown-header-example-resource-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
+- [Understanding resources](#understanding-resources)
+  - [Example resource (index.js file contents)](#example-resource-indexjs-file-contents)
+  - [Autoloading](#autoloading)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

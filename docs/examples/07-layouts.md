@@ -1,10 +1,10 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding layouts](#markdown-header-understanding-layouts)
-    - [Example layout (index.js file contents)](#markdown-header-example-layout-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
+- [Understanding layouts](#understanding-layouts)
+  - [Example layout (index.js file contents)](#example-layout-indexjs-file-contents)
+  - [Autoloading](#autoloading)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

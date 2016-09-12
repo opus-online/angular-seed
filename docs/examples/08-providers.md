@@ -1,10 +1,10 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding providers](#markdown-header-understanding-providers)
-    - [Example provider (index.js file contents)](#markdown-header-example-provider-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
+- [Understanding providers](#understanding-providers)
+  - [Example provider (index.js file contents)](#example-provider-indexjs-file-contents)
+  - [Autoloading](#autoloading)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

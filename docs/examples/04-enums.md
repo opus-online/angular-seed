@@ -1,10 +1,10 @@
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Contents**
+Content
 
-- [Understanding enums](#markdown-header-understanding-enums)
-    - [Example enums (index.js file contents)](#markdown-header-example-enums-indexjs-file-contents)
-    - [Autoloading](#markdown-header-autoloading)
+- [Understanding enums](#understanding-enums)
+  - [Example enums (index.js file contents)](#example-enums-indexjs-file-contents)
+  - [Autoloading](#autoloading)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
