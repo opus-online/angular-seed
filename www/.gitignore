@@ -3,3 +3,5 @@ application.bundle.js
 index.html
 vendor.bundle.js
 vendor.js.map
+application.bundle.js.map
+vendor.bundle.js.map
