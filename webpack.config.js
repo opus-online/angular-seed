@@ -9,6 +9,7 @@ const packageJson = require('./package.json');
  * Webpack plugins
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 const config = {
     entry: {
@@ -25,7 +26,7 @@ const config = {
             {
                 test: /\.js$/,
                 exclude: [/node_modules/],
-                loader: 'babel'
+                loaders: ['babel']
             },
             { test: /\.html$/, loader: 'raw' }
         ]
@@ -43,6 +44,9 @@ const config = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.bundle.js'
+        }),
+        new NgAnnotatePlugin({
+            add: true
         }),
         new HtmlWebpackPlugin({
             title: 'Opus',
@@ -74,18 +78,13 @@ const config = {
 
 if (process.env.NODE_ENV === 'production') {
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-        exclude: [
-            'application.bundle.js'
-        ],
-        compress: { warnings: false },
-        mangle: true
-    }));
-    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-        include: [
-            'application.bundle.js'
-        ],
-        compress: { warnings: false },
-        mangle: false
+        output: {
+            comments: false
+        },
+        compress: {
+            drop_console: true,
+            warnings: false
+        }
     }));
 }
 else if (process.env.NODE_ENV === 'development') {
