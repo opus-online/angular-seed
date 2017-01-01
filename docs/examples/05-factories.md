@@ -16,7 +16,8 @@ Content
 
 ## Example factory (index.js file contents)
 
-```
+```javascript
+/* @ngInject */
 export default function (USER_STATUS_ENUM, User) {
     return {
         createNewUser: () => {
@@ -44,6 +45,7 @@ Testing Factories is as simple as requiring the Factory and running the Function
 Factory:
 
 ```javascript
+/* @ngInject */
 export default function (lodash, LogEntry) {
     const defaults = {
 		type: 'USER_GENERATED'

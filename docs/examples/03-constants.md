@@ -14,7 +14,7 @@ Content
 
 ## Example constant (index.js file contents)
 
-```
+```javascript
 export default SEED_CORE.ENV.NODE_ENV === 'development';
 ```
 

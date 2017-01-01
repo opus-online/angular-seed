@@ -14,7 +14,8 @@ Content
 
 ## Example run (index.js file contents)
 
-```
+```javascript
+/* @ngInject */
 export default function ($rootScope) {
     $rootScope.$on('$stateChangeError', (event, toState, toParams, fromState, fromParams, error) => {
         console.error('error', error);

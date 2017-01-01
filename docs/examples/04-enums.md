@@ -26,7 +26,8 @@ if (this.user.status === this.USER_TYPE_ENUM.KEYS.ACTIVE) {
 
 ## Example enums (index.js file contents)
 
-```
+```javascript
+/* @ngInject */
 export default function ($translate) {
     return {
         KEYS: {

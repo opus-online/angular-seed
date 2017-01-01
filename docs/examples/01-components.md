@@ -53,6 +53,7 @@ import { Component } from '@core';
     `
 })
 export default class {
+    /* @ngInject */
     constructor (User, ListFactory) {
         this.list = ListFactory.createForResource(User);
         this.list.fetch();
@@ -87,7 +88,7 @@ export default class {
 
 Test:
 
-```Javascript
+```javascript
 import { buildMockComponent } from '@core';
 import component from './index.js';
 
@@ -115,7 +116,7 @@ $element = buildMockComponent(component, {
 
 ## Mocking Component filters
 
-```
+```javascript
 const configure = ($provide, $filterProvider) => {
     $provide.constant('path', 'FAKE_PATH_FROM_TEST');
     $filterProvider.register('unixToDate', () => {
