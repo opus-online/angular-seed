@@ -14,7 +14,10 @@ Content
 
 ## Example resource (index.js file contents)
 
-TODO
+```javascript
+/* @ngInject */
+export default ($resource) => $resource('/user/:id');
+```
 
 ## Autoloading
 

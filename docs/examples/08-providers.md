@@ -15,7 +15,7 @@ Content
 
 ## Example provider (index.js file contents)
 
-```
+```javascript
 import lodash from 'lodash';
 
 export default class {

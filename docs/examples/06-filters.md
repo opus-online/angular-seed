@@ -16,7 +16,7 @@ Content
 
 ## Example filter (index.js file contents)
 
-```
+```javascript
 export default (moment) => (input) => moment(input).format('LLL');
 ```
 
@@ -42,6 +42,7 @@ Testing Filters is as simple as requiring the Filter and running the Function wi
 Filter:
 
 ```javascript
+/* @ngInject */
 export default (moment) => (input) => moment(input).format('LLL');
 ```
 

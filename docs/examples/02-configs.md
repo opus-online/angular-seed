@@ -15,6 +15,7 @@ Content
 ## Example config block (index.js file contents)
 
 ```
+/* @ngInject */
 export default ($locationProvider, $urlRouterProvider) => {
     $locationProvider.html5Mode({
         enabled: true,

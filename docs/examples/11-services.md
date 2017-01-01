@@ -16,9 +16,9 @@ Content
 
 ## Example service (index.js file contents)
 
-```
+```javascript
 export default class {
-
+    /* @ngInject */
     constructor ($translate, toastr) {
         this.$translate = $translate;
         this.toastr = toastr;

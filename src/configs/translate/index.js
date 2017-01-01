@@ -1,3 +1,4 @@
+/* @ngInject */
 export default ($translateProvider) => {
     $translateProvider.useStaticFilesLoader({
         prefix: 'languages/',

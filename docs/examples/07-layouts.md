@@ -21,7 +21,7 @@ Layouts are just root [states](12-states.md) that other states can inherit from.
 
 ## Example layout (index.js file contents)
 
-```
+```javascript
 export default {
     parent: 'ApplicationLayout',
     template: `

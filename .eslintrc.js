@@ -1,0 +1,31 @@
+module.exports = {
+    parser: 'babel-eslint',
+    extends: ['airbnb/base'],
+    rules: {
+        indent: ['error', 4],
+        'max-len': ['error', 180],
+        'comma-dangle': ['error', 'never'],
+        'space-before-function-paren': ['error', 'always'],
+        'arrow-body-style': ['off'],
+        'func-names': ['off'],
+        'new-cap': ['error', {capIsNewExceptions: ['Component']}],
+        'brace-style': ['error', 'stroustrup'],
+        'no-console': ['warn', { allow: ['warn', 'error', 'info', 'debug', 'groupCollapsed', 'groupEnd'] }],
+        'no-param-reassign': ['off'],
+    },
+    globals: {
+        angular: false,
+        SEED_CORE: false,
+        spyOn: false,
+        jasmine: false,
+        describe: false,
+        it: false,
+        xit: false,
+        beforeAll: false,
+        beforeEach: false,
+        afterAll: false,
+        afterEach: false,
+        expect: false,
+        $fixtures: true
+    }
+}
