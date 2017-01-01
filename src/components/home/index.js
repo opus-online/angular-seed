@@ -1,10 +1,9 @@
 import { Component } from 'opus-angular-seed-core';
+import template from './template.html';
 
 @Component({
-    template: `
-        <h1 class="centered" style="height: 30%;">{{ 'Opus' | translate }}</h1>
-        <img class="centered" style="height: 100%; width: 100%;" src="/assets/logo.svg">
-    `
+    template
 })
+
 export default class {
 }
