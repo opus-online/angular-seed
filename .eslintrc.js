@@ -1,6 +1,7 @@
 module.exports = {
     parser: 'babel-eslint',
-    extends: 'airbnb/base',
+    extends: ['airbnb/base', 'angular'],
+    plugins: ['angular'],
     rules: {
         indent: ['error', 4],
         'max-len': ['error', 180],
@@ -11,7 +12,9 @@ module.exports = {
         'new-cap': ['error', {capIsNewExceptions: ['Component']}],
         'brace-style': ['error', 'stroustrup'],
         'no-console': ['warn', { allow: ['warn', 'error', 'info', 'debug', 'groupCollapsed', 'groupEnd'] }],
-        'no-param-reassign': ['off']
+        'no-param-reassign': ['off'],
+        'angular/on-watch': ['off'],
+        'angular/log': ['warn']
     },
     globals: {
         angular: false,
