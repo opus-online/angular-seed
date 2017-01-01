@@ -91,10 +91,11 @@ if (process.env.NODE_ENV === 'production') {
 else if (process.env.NODE_ENV === 'development') {
     config.debug = true;
     config.devtool = 'source-map';
-    config.module.preLoaders.push({ test: /\.js$/, loader: 'eslint-loader?parser=babel-eslint', exclude: /node_modules/ });
-    config.eslint = {
-        configFile: path.join(__dirname, '.eslintrc') // parser doesn't work, needs to be defined in the loader section: https://github.com/MoOx/eslint-loader/issues/92
-    };
+    config.module.preLoaders.push({
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+    });
 }
 
 module.exports = config;
