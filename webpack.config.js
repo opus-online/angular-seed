@@ -3,6 +3,7 @@ const env = require('./scripts/environment.js');
 const path = require('path');
 
 const webpack = require('webpack');
+const merge = require('webpack-merge');
 const packageJson = require('./package.json');
 const PRODUCTION = process.env.NODE_ENV === 'production';
 
@@ -128,49 +129,7 @@ const config = {
                 preserveLineBreaks: true
             } : false
         })
-    ],
-    devServer: {
-        contentBase: 'www',
-        historyApiFallback: true,
-        inline: true,
-        quiet: false,
-        host: '0.0.0.0',
-        port: env.PORT,
-        stats: {
-            assets: false,
-            colors: true,
-            version: false,
-            hash: false,
-            timings: true,
-            chunks: false,
-            chunkModules: false
-        }
-    }
+    ]
 };
 
-if (PRODUCTION) {
-    config.module.preLoaders.push({
-        test: /\.(jpg|jpeg|png|gif|svg)$/i,
-        loader: 'image-webpack'
-    });
-    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-        output: {
-            comments: false
-        },
-        compress: {
-            drop_console: true,
-            warnings: false
-        }
-    }));
-}
-else if (process.env.NODE_ENV === 'development') {
-    config.debug = true;
-    config.devtool = 'source-map';
-    config.module.preLoaders.push({
-        test: /\.js$/i,
-        loader: 'eslint',
-        exclude: /node_modules/
-    });
-}
-
-module.exports = config;
+module.exports = merge.smart(config, require(`./webpack.${process.env.NODE_ENV || 'development'}.js`));
